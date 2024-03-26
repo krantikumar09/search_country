@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where in the world?</title>
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="src/style.css">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+
+    <!-- tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <!-- fontawesome cdn -->
+    <script src="https://kit.fontawesome.com/6987690705.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header class="py-7">
+        <div class="container m-auto ps-4 pe-4">
+            <nav class="flex items-center justify-between">
+                <h4 class="font-bold md:text-md">Where in the world?</h4>
+
+                <div onclick="handleTheme()" class="flex items-center gap-2 cursor-pointer">
+                    <i class="fa-regular fa-moon"></i>
+                    <p class="font-medium text-sm">Dark Mode</p>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="mt-10">
+        <div class="container m-auto ps-4 pe-4">
+            <section class="main-header flex items-start justify-start sm:justify-between flex-col sm:flex-row gap-4">
+                <div class="search-container">
+                    <div class="search-box relative h-[55px] w-[280px] sm:w-[380px] md:w-[450px]">
+                        <i
+                            class="fa-solid fa-magnifying-glass absolute left-[18px] top-[50%] translate-y-[-50%] text-base"></i>
+                        <input type="text" id="search" placeholder="Search for a country..."
+                            class="w-full h-full border-none outline-none rounded-[6px] text-base font-normal ps-[50px]" />
+                    </div>
+
+                    <div id="suggestions">
+
+                    </div>
+                </div>
+
+                <div class="region-container">
+                    <div class="region-box relative w-[220px] h-[55px] flex items-center justify-between gap-5 px-5 rounded-[6px]  cursor-pointer"
+                        onclick="handleRegionList()">
+                        <span class="text-base font-medium">Filter by Region</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+
+                    <div class="region-list">
+                        <ul>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="country-container" id="countryContainer">
+                <!-- Country cards will be appended here -->
+            </section>
+
+        </div>
+    </main>
+
+    <!-- custom js -->
+    <script src="src/main.js"></script>
+
+
+</body>
+
+</html>
