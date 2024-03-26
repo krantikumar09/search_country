@@ -1,4 +1,4 @@
-const dataUrl = "/data.json";
+const dataUrl = "../data.json";
 let countriesData = [];
 
 function handleTheme() {
@@ -56,7 +56,9 @@ function createCountryCard(country) {
 
   countryCard.innerHTML = `
     <div class="country-card-inner">
-      <img src="${country.flags.svg}" alt="" class="flag-img w-full h-[200px] object-cover">
+      <img src="${
+        country.flags.svg
+      }" alt="" class="flag-img w-full h-[200px] object-cover">
       <div class="country-card-content h-full -mt-[6px] px-8 py-6 grow">
         <h2 class="country-card-name font-extrabold text-xl mb-5">${
           country.name
@@ -201,5 +203,3 @@ document.addEventListener("click", function (event) {
     dropdown.classList.remove("active");
   }
 });
-
-
